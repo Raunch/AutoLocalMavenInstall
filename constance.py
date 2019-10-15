@@ -7,7 +7,7 @@ Created on 20191012
 '''
 MAVEN_CMD = "mvn install:install-file -DgroupId=%s -DartifactId=%s -Dversion=%s -Dpackaging=aar -Dfile=%s"
 
-GROUP_ID = "com.tarusx.ads"
+GROUP_ID = "com.taurusx.ads"
 
 AAR_INFO = {
     "duadplatform_cw-1.2.2.aar":{"version":"1.2.2", "artifactId":"duadplatform_cw"},
@@ -19,5 +19,6 @@ AAR_INFO = {
     "mopub-moat-mobile-app-kit-2.4.5.aar":{"version":"2.4.5", "artifactId":"mopub-moat-mobile-app-kit"},
     "mopub-sdk-interstitial-5.7.1.aar":{"version":"5.7.1", "artifactId":"mopub-sdk-interstitial"},
     "toutiao_open_ad_sdk-2.3.0.7.aar":{"version":"2.3.0.7", "artifactId":"toutiao_open_ad_sdk"},
+    "criteopublishersdk-3.0.1.aar":{"version":"3.0.1", "artifactId":"criteopublishersdk"},
     "unity-ads-3.1.0.aar":{"version":"3.1.0", "artifactId":"unity-ads"}
 }
