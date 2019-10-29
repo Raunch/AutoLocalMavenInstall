@@ -9,22 +9,31 @@ import os
 import constance
 import subprocess
 
-def installMaven(folder):
+def installMaven(folder, type):
     files = os.listdir(folder)
     for file in files:
         print (file)
         if str(file).startswith("."):
             continue
         path = os.path.join(folder, file)
-        values = constance.AAR_INFO[file]
-        version = values["version"]
-        artifactId = values["artifactId"]
-        print (path, version, artifactId)
-        excuteCmd(artifactId, version, path)
+        if constance.AAR_INFO.__contains__(file):
+            values = constance.AAR_INFO[file]
+            version = values["version"]
+            artifactId = values["artifactId"]
+            print (path, version, artifactId)
+            excuteCmd(artifactId, version, path, type)
+            
 
+def excuteCmd(artifactId, version, path, type):
+    cmd = ""
+    if type == "wesdk":
+        cmd = constance.MAVEN_CMD % (constance.GROUP_ID_WESDK, artifactId, version, path)
+    elif type == "taurusx":
+        cmd = constance.MAVEN_CMD % (constance.GROUP_ID_TAURUSX, artifactId, version, path)
+    elif type == "adlime":
+        cmd = constance.MAVEN_CMD % (constance.GROUP_ID_ADLIME, artifactId, version, path)
 
-def excuteCmd(artifactId, version, path):
-    cmd = constance.MAVEN_CMD % (constance.GROUP_ID, artifactId, version, path)
+    # cmd = constance.MAVEN_CMD % (constance.GROUP_ID, artifactId, version, path)
     result = subprocess.call(cmd, shell=True)
     if result == 0 :
         print ("install " + artifactId + " success")
@@ -34,6 +43,8 @@ def excuteCmd(artifactId, version, path):
     pass
 if __name__ == '__main__':
     aarFolder = os.sys.argv[1]
+    buildType = os.sys.argv[2]
     print (constance.AAR_INFO)
-    installMaven(aarFolder)
+    print (len(constance.AAR_INFO))
+    installMaven(aarFolder, buildType)
     pass
