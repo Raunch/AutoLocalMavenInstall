@@ -32,6 +32,11 @@ def excuteCmd(artifactId, version, path, type):
         cmd = constance.MAVEN_CMD % (constance.GROUP_ID_TAURUSX, artifactId, version, path)
     elif type == "adlime":
         cmd = constance.MAVEN_CMD % (constance.GROUP_ID_ADLIME, artifactId, version, path)
+    elif type == "fission":
+        cmd = constance.MAVEN_CMD % (constance.GROUP_ID_FISSION, artifactId, version, path)
+    elif type == "wegame":
+        cmd = constance.MAVEN_CMD % (constance.GROUP_ID_WE_GAME, artifactId, version, path)
+
 
     # cmd = constance.MAVEN_CMD % (constance.GROUP_ID, artifactId, version, path)
     result = subprocess.call(cmd, shell=True)

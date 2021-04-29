@@ -11,6 +11,11 @@ GROUP_ID_TAURUSX = "com.taurusx.ads"
 GROUP_ID_ADLIME = "com.access_company.adlime"
 GROUP_ID_WESDK = "com.we.sdk"
 
+GROUP_ID_FISSION = "com.fission.sdk"
+
+GROUP_ID_WE_GAME = "com.we.game.sdk"
+
+
 # AAR_INFO = {
 #     "duadplatform_cw-1.2.2.aar":{"version":"1.2.2", "artifactId":"duadplatform_cw"},
 #     "duadplatform_hw-1.2.2.aar":{"version":"1.2.2", "artifactId":"duadplatform_hw"},
@@ -25,7 +30,8 @@ GROUP_ID_WESDK = "com.we.sdk"
 #     "unity-ads-3.1.0.aar":{"version":"3.1.0", "artifactId":"unity-ads"}
 # }
 AAR_INFO = {
-    "bidding-kit-sdk-5.0.1.aar":{"version":"5.0.1", "artifactId":"fb_bidding_kid_sdk"}
+    "gamesdk-20201125.aar":{"version":"20201125", "artifactId":"oppo_gamesdk"},
+    "gamesdk-common-20201125.aar" : {"version":"20201125", "artifactId":"oppo_gamesdk-common"}
 }
 
 # AAR_INFO = {
